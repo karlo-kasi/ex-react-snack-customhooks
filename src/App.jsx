@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import useSwitch from "./hooks/useSwitch";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isOn, toggle] = useSwitch(null);
+  
 
   return (
-    <>
-      Hello world
-    </>
-  )
+    <div>
+      <h1>Il valore è: {isOn ? "ON" : "OFF"}</h1>
+      <button onClick={toggle}>Cambia Stato</button>
+    </div>
+  );
 }
 
-export default App
+export default App;
