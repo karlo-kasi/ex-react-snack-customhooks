@@ -12,8 +12,6 @@ export default function useSwitch(initialValue) {
             setBoolean(false)
         }
     }
-    console.log(isOn)
-
 
     return [isOn, toogle]
 }
