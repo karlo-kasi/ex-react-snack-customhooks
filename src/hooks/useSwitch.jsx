@@ -1,16 +1,10 @@
 import { useState } from "react"
 
-export default function useSwitch(initialValue) {
-    const [boolean, setBoolean] = useState(initialValue)
-
-    const isOn = boolean
+export default function useSwitch(initialValue = false) {
+    const [isOn, setIsOn] = useState(initialValue)
 
     const toogle = () => {
-        if (!isOn === true) {
-            setBoolean(true)
-        } else {
-            setBoolean(false)
-        }
+        setIsOn(prev => !prev)
     }
 
     return [isOn, toogle]
